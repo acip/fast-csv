@@ -43,7 +43,7 @@ export class Scanner {
         if (match == null) {
             return null;
         }
-        const token = match[1];
+        const token = match[0];
         const startCursor = this.cursor + (match.index || 0);
         return new Token({
             token,

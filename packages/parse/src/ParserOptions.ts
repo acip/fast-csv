@@ -77,7 +77,7 @@ export class ParserOptions {
         this.escapedDelimiter = escapeRegExp(this.delimiter);
         this.escapeChar = this.escape ?? this.quote;
         this.supportsComments = !isNil(this.comment);
-        this.NEXT_TOKEN_REGEXP = new RegExp(`([^\\s]|\\r\\n|\\n|\\r|${this.escapedDelimiter})`);
+        this.NEXT_TOKEN_REGEXP = new RegExp(`[^\\s]|${this.escapedDelimiter}|\\r\\n|\\n|\\r`);
 
         if (this.maxRows > 0) {
             this.limitRows = true;
